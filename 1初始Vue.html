@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>初始Vue.js</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<!--将来new的Vue实例，会控制这个元素中的所有内容-->
+	<!--Vue实例所控制的这个元素区域，就是我们的v-->
+	<div id="app">
+		{{ message }}
+	</div>
+
+	<script type="text/javascript">
+		//我们new出来的这个vm对象就是我们MVVM中的vm调度者
+		var app = new Vue({
+			//表示当前我们new的这个Vue实例，要控制页面上的哪个区域
+			el:'#app',
+			//data属性中，存放的是el中要用到的数据
+			data:{
+				message:'Hello Vue!'
+			}
+		});
+	</script>
+</body>
+</html>
