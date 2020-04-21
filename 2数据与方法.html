@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数据与方法</title>
+	<script src="vue.js"></script>
+	<style type="text/css">
+		[v-cloak]{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<!--使用v-cloak能够解决插值表达式闪烁的问题-->
+	<div id="app" v-cloak>
+		{{a}}
+	</div>
+	<script type="text/javascript">
+		var data = { a : 1 };//data是用var定义的一个全新的变量
+		var vm = new Vue({
+			el:"#app",
+			data:data //第一个data是对象的属性
+		});
+
+		// $watch 是一个实例方法
+		vm.$watch('a', function (newVal, oldVal) {
+			//输出改变后的a的值 改变之前a的值。
+			console.log(newVal, oldVal);
+		})
+
+		vm.$data.a="test..."
+	</script>
+</body>
+</html>
